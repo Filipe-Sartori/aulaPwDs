@@ -1,0 +1,35 @@
+﻿@*liga este fomulario com o modelo feito em model*@
+@model atv01_3b_DS.Models.modeloExemplo 
+
+@{
+    ViewBag.Title = "frmCadastro";
+}
+
+<h2>frmCadastro</h2>
+
+@*<form action="About" method="post">
+
+    <input type="text" id="txtNome" name="txtNome"/>
+
+    <input type="submit" id="btnEnviar" name="btnEnviar" value="Enviar"/>
+
+</form>*@
+
+@using (Html.BeginForm("About", "Home", FormMethod.Post))
+{
+    @Html.ValidationSummary()@*verificacao para funcionar o formulario*@
+
+    @Html.LabelFor(m => m.nome) @*caixa de texto*@
+
+    <br/>
+    @Html.EditorFor(m => m.nome)
+<br/>
+
+<input type="submit" class="button button-a button-big button-rouded" value="Entrar"/><br/>
+<br/>
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+  }
